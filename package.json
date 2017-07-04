@@ -1,0 +1,26 @@
+{
+  "name": "my-header-parser",
+  "version": "0.0.1",
+  "description": "Parse the request header for ip, language, software",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lokyi/fcc-header-parser.git"
+  },
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "useragent": "^2.2.0"
+  },
+  "engines": {
+    "node": "8.1.x"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
