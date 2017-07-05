@@ -12,6 +12,8 @@ app.get("/", function (request, response) {
 });
 
 app.get('/api', function (request, response) {
+  var ip = request.ip.startsWith('::ffff:') ? request.ip.slice(7) : request.ip;
+
   var language = request.headers['accept-language'] ? request.headers['accept-language'].split(',')[0] : null;
 
   var agent = useragent.parse(request.headers['user-agent']) || null;
@@ -22,7 +24,7 @@ app.get('/api', function (request, response) {
   if (os && os.patch) software += '.' + agent.os.patch;
 
   response.json({
-    ipaddress: request.ip || null,
+    ipaddress: ip || null,
     language: language,
     software: software
   });
